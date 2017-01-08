@@ -6,6 +6,13 @@
   border: 2px solid black;
 }
 
+#board-info {
+  width: 250px;
+  text-align: center;
+  margin: 125px auto;
+  position: relative;
+}
+
 .boardBlock {
   position: absolute;
   display: inline-block;

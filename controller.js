@@ -2,6 +2,7 @@ snake.controller = {
   init: function() {
     snake.model.init();
     snake.view.init(this.callbacks);
+    this.speed = 100;
   },
 
   loop: function() {
@@ -16,7 +17,7 @@ snake.controller = {
   },
 
   runLoop: function() {
-    this.gameLoop = setInterval(this.loop, 700);
+    this.gameLoop = setInterval(this.loop, this.speed);
   },
 
   callbacks: {

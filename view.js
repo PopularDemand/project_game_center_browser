@@ -2,7 +2,7 @@ snake.view = {
   init: function(callbacks) {
     $(document).keypress(callbacks.changeDirection);
     $('#play-button').click(function(e) {
-      $(e.target).hide();
+      $(e.target).parent('#board-info').hide();
       callbacks.startGame();
     })
   },
@@ -20,14 +20,13 @@ snake.view = {
 
   gameOver: function(score) {
     $('.boardBlock').remove();
-    $('<h1>').text('game over').appendTo($('#board'));
-    $('<p>').text('your final score was: ' + score).appendTo($('#board'));
-    $('#play-button').show();
+    $('#main-info').text('Game over');
+    $('.extra-info').text('Score: ' + score);
+    $('#board-info').show();
   },
 
   // Helpers
   paintDiv: function(coordinates, divClass) {
-    console.log(divClass + ' paintdiv coordinates: ' + coordinates);
     var x = coordinates[0];
     var y = coordinates[1];
     var $newDiv = $('<div>').addClass(divClass).addClass('boardBlock').css({ top: y, left: x });
@@ -35,7 +34,6 @@ snake.view = {
   },
 
   clearBoard: function() {
-    console.log('clearing board')
     $('.boardBlock').remove();
   }
 }

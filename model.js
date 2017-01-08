@@ -82,7 +82,6 @@ snake.model = {
       if (this.snakeBody[i][0] === snakeHead[0] &&
           this.snakeBody[i][1] === snakeHead[1]) {
         headHitBody = true;
-        console.log('in loooooop')
         break;
       }
     }
