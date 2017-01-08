@@ -86,6 +86,6 @@ snake head div:  200px 200px
   - model.init
   - views.init(callback)
   setInterval
-  - | model.move in direction (inc. food eat check)
+  - | model.move in direction // model.takeTurn
   - | model.collision check
   - view.render
