@@ -1,6 +1,6 @@
 snake.view = {
   init: function(callbacks) {
-    $(document).keypress(callbacks.changeDirection);
+    $(document).keydown(callbacks.changeDirection);
     $('#play-button').click(function(e) {
       $(e.target).parent('#board-info').hide();
       callbacks.startGame();
@@ -29,7 +29,10 @@ snake.view = {
   paintDiv: function(coordinates, divClass) {
     var x = coordinates[0];
     var y = coordinates[1];
-    var $newDiv = $('<div>').addClass(divClass).addClass('boardBlock').css({ top: y, left: x });
+    var $newDiv = $('<div>')
+      .addClass(divClass)
+      .addClass('boardBlock')
+      .css({ top: y, left: x });
     $newDiv.appendTo('#board');
   },
 

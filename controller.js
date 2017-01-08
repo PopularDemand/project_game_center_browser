@@ -2,7 +2,7 @@ snake.controller = {
   init: function() {
     snake.model.init();
     snake.view.init(this.callbacks);
-    this.speed = 100;
+    this.speed = 200;
   },
 
   loop: function() {
@@ -23,19 +23,18 @@ snake.controller = {
   callbacks: {
     changeDirection: function(e) {
       var direction;
-      console.log(e.which)
-      if (e.keyCode === 38) {
+      if (e.which === 38) {
        direction = 'up';
-      } else if (e.keyCode === 40) {
+      } else if (e.which === 40) {
        direction = 'down';
-      } else if (e.keyCode === 37) {
+      } else if (e.which === 37) {
        direction = 'left';
-      } else if(e.keyCode === 39) {
+      } else if(e.which === 39) {
        direction = 'right';
       }
-      console.log('now moving: ' + (direction));
-      snake.model.direction = direction;
+      snake.model.direction = direction || snake.model.direction;
     },
+
     startGame: function() {
       snake.controller.runLoop();
     }
