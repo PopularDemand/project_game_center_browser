@@ -1,4 +1,5 @@
-project_gamecenter_browser
-==========================
+# Sssnake
+Like snake. But made by me.
+You are a hungry snake. [Eat food. Expand.](https://snakey-snake.surge.sh)
 
-hiss hiss gulp grow hiss...
+Pairs well with [Hoppy](https://hoppity.surge.sh). ([repo](https://www.github.com/populardemand/hoppy))
